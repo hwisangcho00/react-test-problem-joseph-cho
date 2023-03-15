@@ -23,3 +23,13 @@ OneClick.play = async ({canvasElement}) => {
     const button = await canvas.getByRole('button');
     await userEvent.click(button);
 }
+
+export const TwoClick = Template.bind({});
+TwoClick.play = async ({canvasElement}) => {
+    const canvas = within(canvasElement);
+
+    const button = await canvas.getByRole('button');
+    await userEvent.click(button);
+    await userEvent.click(button);
+
+}
