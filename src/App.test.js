@@ -7,6 +7,7 @@ import { DefaultPage } from './App.stories.js';
 // Add your tests here
 // See https://storybook.js.org/docs/react/writing-tests/importing-stories-in-tests#example-with-testing-library
 
+// No click event
 test('Checks if the button starts as <click me>', () => {
     render(<DefaultPage/>)
 
@@ -16,6 +17,7 @@ test('Checks if the button starts as <click me>', () => {
 
 })
 
+// After single click event
 test('Checks if the button turns to  as <thanks> after single click', () => {
     render(<DefaultPage/>)
 
@@ -27,6 +29,7 @@ test('Checks if the button turns to  as <thanks> after single click', () => {
 
 })
 
+// After two click events
 test('Checks if the button returns to  as <click me> after two clicks', () => {
     render(<DefaultPage/>)
 
@@ -39,7 +42,7 @@ test('Checks if the button returns to  as <click me> after two clicks', () => {
 
 })
 
-
+// Arbitrary number of clicks (0~999)
 test('Checks the state of the button after arbitrary number of clicks', () => {
     render(<DefaultPage/>)
 
@@ -56,7 +59,4 @@ test('Checks the state of the button after arbitrary number of clicks', () => {
     } else {
         expect(button).toHaveTextContent('thanks');
     }
-
-    
-
 })
